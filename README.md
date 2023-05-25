@@ -6,7 +6,7 @@ To installed all the required libraries, use command pip install -r requirements
 
 Also mention your database details in db.yaml
 
-In your database, create 3 tables : 
+In your database, create 2 tables : 
 
 1. UsersDetails(email VARCHAR(120) PRIMARY KEY, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, city VARCHAR(50) NOT NULL, phone VARCHAR(15) NOT NULL, password VARCHAR(150) NOT NULL)
 
