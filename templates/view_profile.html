@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="bg-gray-800 text-gray-100">
+  <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="bg-gray-700 rounded-lg shadow-md p-4 mb-4">
+      <!-- User Details -->
+      <h2 class="text-2xl font-bold mb-4">User Details</h2>
+     
+      <p>{{ users[1] + ' '+users[2] }}</p>
+      <p> {{ users[3] }}</p>
+      
+    </div>
+
+    <!-- Recipes Section -->
+    <div class="bg-gray-700 rounded-lg shadow-md p-4 mt-4">
+      <h2 class="text-2xl font-bold mb-4">Recipes by {{ users[1]+' '+users[2] }}</h2>
+      {% if blogs %}
+        {% for blog in blogs %}
+        <div class="mb-4">
+          <div class="flex items-center justify-between space-x-4">
+            <h3 class="text-lg font-bold"><a href="/recipe/{{blog[0]}}">{{ blog[1] }}</a></h3>
+            <div>
+              <span class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 rounded text-base mt-4 md:mt-0">
+               <a href="/edit_recipe/{{blog[0]}}"> <img src="/static/images/edit_logo.png" alt="edit" style="height: 45px;"></a>
+              </span>
+              <span class="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 rounded text-base mt-4 md:mt-0">
+                <a href="/delete_recipe/{{blog[0]}}"><img src="/static/images/delete_logo.png" alt="delete" style="height: 45px;"></a> 
+              </span>
+            </div>
+          </div>
+          <p>{{ blog[2] }}</p>
+        </div>
+        {% endfor %}
+      {% else %}
+      <p class="text-xl text-gray-400 font-cursive" style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';">You have no recipes yet</p>
+      <p class="text-xl text-gray-400 italic font-cursive" style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';"><a href="{{url_for('create_recipe')}}">Share a recipe....</a></p>
+      {% endif %}
+    </div>
+    
+  </div>
+</div>
+
+{% endblock %}
+

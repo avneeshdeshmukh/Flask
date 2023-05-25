@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Nova';
+    src: url('font/NovaCut-Regular.ttf') format('ttf');
+}
+
+#mail:link {
+  color: green; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+#mail:visited {
+  color: blueviolet;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#mail:hover {
+  color: magenta;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#mail:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="bg-gray-800 text-gray-100 ">
+  <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="bg-gray-200 rounded-lg shadow-md p-4 " style="margin-top: 100px; margin-bottom: 100px">
+      <h2 class="text-4xl font-bold text-center mb-4 text-black">{{ blog[1] }}</h2>
+      <p class="text-gray-800 italic mb-4 text-center">By {{ users[1] + ' '+ users[2] }}</p>
+      <p class="text-gray-600 italic mb-4 py-3 px-10">{{ blog[2] }}</p>
+      <p class="text-gray-800"><strong>Ingredients:</strong></p>
+      <div class="p-6 text-gray-800">{{blog[3]}}</div>
+      <p class="text-gray-800"><strong>Instructions:</strong></p>
+      <div class="p-6 text-gray-800">{{blog[4]}}</div>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}

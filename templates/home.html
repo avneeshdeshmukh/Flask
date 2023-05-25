@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+
+
+<!-- Main Content -->
+<div class="max-w-full mx-0 py-6 px-0 sm:px-6 lg:px-8 bg-gray-800">
+  {% if user.is_authenticated %}
+  <h1 class="text-6xl font-bold text-white font-cursive text-center" style="margin-top: 10px; margin-bottom: 5px; font-family: 'Nova';">Welcome {{user_data[1]}}</h1>
+  <p class="text-xl text-gray-400 italic font-cursive text-center"style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';">Explore Our Wide Range Of Recipes!!</p>
+ 
+  {% else %}
+  <h1 class="text-6xl font-bold text-white font-cursive text-center" style="margin-top: 10px; margin-bottom: 5px; font-family: 'Nova';">Welcome</h1>
+  <p class="text-xl text-gray-400 italic font-cursive text-center"style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';"> <a href="{{url_for('login')}}">Join Us Explore Our Wide Range Of Recipes!!</a></p>
+  {% endif %}
+
+  <!-- Website Intro -->
+<div class="bg-gray-200 py-8 my-10 rounded-lg shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Intro Text -->
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl font-bold text-gray-800">Welcome to Savory Secrets</h2>
+        <p class="text-gray-600 mt-4">Discover a world of delicious recipes created with love and passion. Our mission is to provide you with culinary inspiration, tips, and mouthwatering dishes to elevate your cooking experience.</p>
+        <a href="/about_us" class="mt-6 inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-lg">Learn More</a>
+      </div>
+      <!-- Intro Image -->
+      <div class="text-center">
+        <img src="/static/images/intro.jpg" alt="Intro Image" class="w-full h-auto max-w-md mx-auto rounded-lg">
+      </div>
+    </div>
+  </div>
+</div>
+  
+<h1 class="text-3xl font-bold text-white  " style="margin-top: 10px; margin-bottom: 5px; font-family: 'Nova';">Check Out Our Latest Recipes</h1>
+  <p class="text-xl text-gray-400 italic  "style="margin-top: 5px; margin-bottom: 40px; font-family: 'Nova';">Enjoy!!!</p>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-4">
+      <!-- Recipe Cards -->
+      {% for recipe in recipes %}
+        <div class="bg-white rounded-lg shadow-md p-4" style="padding-bottom: 50px; padding-top: 20px;">
+          <h2 class="text-lg font-medium text-gray-800"> <a href="/recipe/{{recipe[0]}}">{{ recipe[1] }}</a></h2>
+          <p class="text-gray-600">{{ recipe[2] }}</p>
+          <!-- Additional recipe card content goes here -->
+        </div>
+      {% endfor %}
+      <!-- Add New Recipe Button -->
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center">
+        <svg class="h-8 w-8 text-gray-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+        <span class="text-sm text-gray-600"><a href="{{url_for('create_recipe')}}">Add New Recipe</a> </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

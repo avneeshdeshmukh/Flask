@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    
+<div class="bg-gray-900 text-gray-100">
+    
+  
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div class="bg-gray-800 rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-semibold mb-4">Edit Recipe</h2>
+        
+        <form method="post" action="/edit_recipe/{{blog[0]}}" enctype="multipart/form-data">
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2" for="title">Title</label>
+            <input type="text" id="title" name="title" class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200" value="{{blog[1]}}">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2" for="description">Description</label>
+            <textarea id="description" name="description" class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200" rows="4">{{blog[2]}}</textarea>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2" for="ingredients">Ingredients</label>
+            <textarea id="ingredients" name="ingredients" class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200" rows="6" >{{blog[3]}}</textarea>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-300 text-sm font-bold mb-2" for="instructions">Instructions</label>
+            <textarea id="instructions" name="instructions" class="w-full border border-gray-600 rounded py-2 px-3 focus:outline-none focus:border-indigo-500 bg-gray-700 text-gray-200" rows="8" >{{blog[4]}}</textarea>
+          </div>
+          
+          
+          <div class="flex justify-end">
+            <button type="submit" class="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+
+{% endblock %}

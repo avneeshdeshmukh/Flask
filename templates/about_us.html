@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <!-- About Us Section -->
+  <section class="text-gray-600 body-font bg-gray-800">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/2">
+          <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">WHO WE ARE</h2>
+            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Welcome to Savory Secrets</h1>
+            <p class="leading-relaxed mb-3">We are passionate about food and bringing you the best recipes from around the world. Our mission is to share the joy of cooking and help you create delicious meals in your own kitchen.</p>
+            <p class="leading-relaxed mb-3">At Savory Secrets, we believe that cooking is an art form and that everyone can become a master chef. Whether you're a beginner or an experienced cook, our collection of recipes, cooking tips, and culinary inspiration will guide you on your gastronomic journey.</p>
+            <p class="leading-relaxed mb-3">Join us and discover the secrets to making mouthwatering dishes that will impress your family and friends. Let's explore the world of flavors together!</p>
+            {% if user.is_authenticated %}
+            <a class="text-indigo-500 inline-flex items-center">Thank You For Being A Part Of Our Community! <br>Let's Share Some Love Through Food.....
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            {% else %}
+            <a href="{{url_for('login')}}" class="text-indigo-500 inline-flex items-center"> Join Us
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="p-4 md:w-1/2">
+          <div class="flex flex-col h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">OUR MISSION</h2>
+            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Discover the Art of Cooking</h1>
+            <p class="leading-relaxed mb-3">Our mission at Savory Secrets is to inspire and empower home cooks to explore their culinary skills and embrace the joy of cooking. We aim to provide a platform where food enthusiasts can come together to learn, share, and indulge in the world of flavors.</p>
+            <p class="leading-relaxed mb-3">Through our carefully curated collection of recipes, cooking techniques, and expert tips, we strive to make cooking accessible and enjoyable for everyone. We believe that cooking is not just about nourishment, but also a way to express creativity, connect with loved ones, and create lasting memories.</p>
+            <p class="leading-relaxed mb-3">Join us on this gastronomic adventure and unlock the secrets to creating delicious dishes that will tantalize your taste buds and ignite your passion for cooking. Let's embark on a culinary journey together!</p>
+            
+          </div>
+        </div>
+        <div class="p-4 md:w-1/2">
+          <div class="flex flex-col h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CONTACT US</h2>
+            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Here Are Our Contact Details</h1>
+            <p class="leading-relaxed mb-3">Savory Secrets</p>
+            <p class="leading-relaxed mb-3">GRGW+F5J, 1186/A, Off J.M. Road <br>Modern Engineering College Rd <br> Shivajinagar, Pune, Maharashtra 411005</p>
+            <p class="leading-relaxed mb-3">Managed By <br>Kedar Chikane : +91 1234567890</p>
+            <p class="leading-relaxed mb-3">Write Your Valuable FeedBack At <a id="mail" href="mailto: savorysecretsxoxo@gmail.com" target="_blank">savorysecretsxoxo@gmail.com</a> </p>
+            
+          </div>
+        </div>
+        <div class="p-4 md:w-1/2">
+          <div class="flex flex-col h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">DEVELOPERS</h2>
+            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Meet Our Devs!!</h1>
+            <p class="leading-relaxed mb-3"><a href="/developer/3">Chaitanya Daphal</a></p>
+            <p class="leading-relaxed mb-3"><a href="/developer/2">Kedar Chikane</a></p>
+            <p class="leading-relaxed mb-3"><a href="/developer/1">Rutuja Chanakhekar</a></p>
+            <p class="leading-relaxed mb-3"><a href="/developer/4">Avneesh Deshmukh</a></p>
+            
+          </div>
+        </div>
+        
+    </div>
+  </section>
+{% endblock %}
